@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import Header from '../components/Header'
+import Head from 'next/head';
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       {/* Navbar:- To select the genre */}
       {/* Results:-  */}
       <Header/>
+      <Navbar/>
     </div>
   )
 }
