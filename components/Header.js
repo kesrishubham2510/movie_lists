@@ -14,6 +14,7 @@ import {
 
 // border-2 border-cyan-300
 function Header() {
+  const image_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScWeFnvKa3k0Rt2NxnJlMw9lQ9ul1V6AFjfA&usqp=CAU';
   return (
     <header className="flex flex-col sm:flex-row m-5 justify-between items-center h-auto">
       <div className="flex flex-grow justify-evenly max-w-2xl">
@@ -27,7 +28,7 @@ function Header() {
 
       <Image
         className="object-contain"
-        src="https://links.papareact.com/ua6"
+        src={image_url}
         alt="my-logo"
         width={100}
         height={100}

@@ -22,20 +22,4 @@ export default {
 		title: 'Horror',
 		url: `/discover/movie?api_key=${API_KEY}&with_genre=27`, 
 	},
-	// fetchTrendingg : {
-	// 	title: 'Trendingd',
-	// 	url: `/trending/all/week?api_key=${API_KEY}&language=en-US`, 
-	// },
-	// fetchTopRatedd : {
-	// 	title: 'Top Ratedd',
-	// 	url: `/movie/top_rated?api_key=${API_KEY}&language=en-US`, 
-	// },
-	// fetchComedyMoviess : {
-	// 	title: 'Comedyd',
-	// 	url: `/discover/movie?api_key=${API_KEY}&with_genre=35`, 
-	// },
-	// fetchHorrorMoviesss: {
-	// 	title: 'Horrord',
-	// 	url: `/discover/movie?api_key=${API_KEY}&with_genre=27`, 
-	// },
 };

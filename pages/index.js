@@ -33,7 +33,7 @@ export async function getServerSideProps(context){
     //  console.log(context);
      const genreKey = context.query.genre;
      const genre = genres[genreKey]?.url || genres.fetchTrending.url ;
-     
+     console.log("Hitting the "+genreKey);
      //  making the request to TMDB server
      const request = await fetch(`https://api.themoviedb.org/3${genre}`, {
        method : 'GET'
