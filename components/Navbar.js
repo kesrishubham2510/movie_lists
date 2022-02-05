@@ -7,13 +7,15 @@ function Navbar() {
 
 	const router = useRouter();
 
-	function navigationHandler(genre){
+	// function navigationHandler(genreKey){
       
 	
-	  //  using a url-queryParam to navigate, it would be easier to extract it 
-		router.push(`/?genre=${genre}`);
+	//   //  using a url-queryParam to navigate, it would be easier to extract it 
+  //   //  passing the key so that the url to ping the data can be easily extracted form the objects
+  //   console.log(genreKey);
+	// 	router.push(`/?genre=${genreKey}`);
 		
-	}
+	// }
 
 
   return (
@@ -41,7 +43,7 @@ function Navbar() {
             className="transform cursor-pointer transition duration-75 last:pr-20 hover:scale-125
 			hover:text-cyan-200 active:text-pink-500"
             key={key}
-			onClick={()=>navigationHandler(title)}
+			onClick={()=>router.push(`/?genre=${key}`)}
           >
             {title}
           </h2>

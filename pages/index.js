@@ -1,8 +1,13 @@
+import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
+import Results from '../components/Results';
 
-export default function Home() {
+import genres from '../utils/requests';
+
+export default function Home({results}) {
+  //  the props will contain details about genre-specific movies
   return (
     <div className="">
       <Head>
@@ -15,6 +20,34 @@ export default function Home() {
       {/* Results:-  */}
       <Header/>
       <Navbar/>
+      <Results results={results}/>
     </div>
   )
 }
+
+
+export async function getServerSideProps(context){
+
+  /*   accessing the genre 
+       key is genre because while using router dom we had used the 'genre' variable
+  */
+    //  console.log(context);
+     const genreKey = context.query.genre;
+     const genre = genres[genreKey]?.url || genres.fetchTrending.url ;
+     
+     //  making the request to TMDB server
+     const request = await fetch(`https://api.themoviedb.org/3${genre}`, {
+       method : 'GET'
+     });
+     
+     const responseData = await request.json();
+    
+     
+
+     return {
+       props: {
+         results : responseData
+       }
+     }
+  }
+  
