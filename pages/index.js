@@ -1,4 +1,3 @@
-import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
@@ -38,15 +37,14 @@ export async function getServerSideProps(context){
      //  making the request to TMDB server
      const request = await fetch(`https://api.themoviedb.org/3${genre}`, {
        method : 'GET'
-     });
-     
+     })
+    //  console.log(request);
      const responseData = await request.json();
-    
-     
+    //  console.log(responseData.results);     
 
      return {
        props: {
-         results : responseData
+         results : responseData.results
        }
      }
   }

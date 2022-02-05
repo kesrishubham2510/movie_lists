@@ -1,4 +1,3 @@
-//  continue from : 1:07:34
 import React from 'react';
 import {useRouter} from 'next/router';
 import genres from '../utils/requests';

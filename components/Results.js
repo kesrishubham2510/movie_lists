@@ -1,18 +1,22 @@
-import React from 'react';
-import genres from '../utils/requests';
+import React from 'react'
+import genres from '../utils/requests'
+import Thumbnail from './Thumbnail'
 
-function Results(props) {
+function Results({ results }){
   
-    return <div>
-	  <h2>This is the results</h2>
-  </div>;
+  
+
+  return (<div>
+      {results.map((result) => (
+        <Thumbnail key={result.id} result={result} />
+      ))}
+    </div>
+  )
 }
-
-
 
 // export async function getServerSideProps(context){
 
-// /*   accessing the genre 
+// /*   accessing the genre
 //      key is genre because while using router dom we had used the 'genre' variable
 // */
 //     console.log(context);
@@ -22,9 +26,9 @@ function Results(props) {
 //    console.log(genre);
 //    //  making the request to TMDB server
 //    const request = await fetch(`https://api.themoviedb.org/3/${genre}`);
-   
+
 //    const responseData = request.json();
- 
+
 //    return {
 //      props: {
 //        responseData: responseData
@@ -32,4 +36,4 @@ function Results(props) {
 //    }
 // }
 
-export default Results;
+export default Results
